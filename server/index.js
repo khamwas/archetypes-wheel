@@ -31,7 +31,7 @@ massive(process.env.CONNECTION_STRING)
 app.get('/api/archetypes', (req, res, next) => {
 	req.app
 		.get('db')
-		.query('select * from archetypes')
+		.query('select * from archetypes order by archetype_id')
 		.then((result) => {
 			res.status(200).json(result);
 		})
